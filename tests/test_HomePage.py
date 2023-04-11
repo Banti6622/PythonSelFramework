@@ -15,7 +15,7 @@ class TestHomePage(BaseClass):
         homepage= HomePage(self.driver)
         log.info("first name is "+getData["firstname"])
         homepage.getName().send_keys(getData["firstname"])
-        homepage.getEmail().send_keys(getData["lastname"])
+        homepage.getEmail().send_keys(getData["lastname"]) ##mention only last name not email
         homepage.getCheckBox().click()
         self.selectOptionByText(homepage.getGender(), getData["gender"])
 
