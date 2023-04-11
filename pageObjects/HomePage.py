@@ -26,7 +26,9 @@ class HomePage:
 
 
     def getEmail(self):
-        return self.driver.find_element(*HomePage.email)
+        return self.driver.find_element(*HomePage.email)    # * is used to unpack tuple in parameters
+        ## HomePage.email[0], HomePage.email[1] => *HomePage.email
+
 
     def getCheckBox(self):
         return self.driver.find_element(*HomePage.check)

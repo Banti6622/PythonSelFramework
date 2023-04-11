@@ -28,6 +28,7 @@ class TestHomePage(BaseClass):
 
     ###@pytest.fixture(params=[{"firstname": "Sagar", "lastname":"Sarade", "Gender": "Male"}, {"firstname": "Yusuf", "lastname":"Tamboli", "Gender": "Male"}])
     @pytest.fixture(params=HomePageData.getTestData("Testcase2"))
-    def getData(self, request):
+    def getData(self, request):     #request is default object of fixture which automatically initilized when fixture is being executed
         return request.param
+
 

@@ -13,7 +13,8 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="class")
 def setup(request):
     global driver
-    browser_name=request.config.getoption("browser_name")
+    browser_name=request.config.getoption("browser_name")   #pytest --browser_name "firefox"
+     # parameter which can be passed with pytest command
     if browser_name == "chrome":
         driver = webdriver.Chrome()
     elif browser_name == "firefox":
@@ -26,7 +27,7 @@ def setup(request):
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     driver.maximize_window()
 
-    request.cls.driver = driver
+    request.cls.driver = driver         ## request => to class which is using fixture
     yield
     driver.close()
 
